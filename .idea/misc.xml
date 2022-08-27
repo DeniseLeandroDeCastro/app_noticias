@@ -5,9 +5,11 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_favorite.xml" value="0.2065" />
         <entry key="app/src/main/res/drawable-v24/ic_search.xml" value="0.2065" />
+        <entry key="app/src/main/res/drawable/search_bckground.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_article.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_favorite.xml" value="0.3411458333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.340625" />
+        <entry key="app/src/main/res/layout/activity_search.xml" value="0.33" />
         <entry key="app/src/main/res/layout/item_news.xml" value="0.340625" />
       </map>
     </option>
