@@ -12,7 +12,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="2dp"
-        android:iconifieldByDefault="true"
         android:background="@drawable/search_bckground"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
