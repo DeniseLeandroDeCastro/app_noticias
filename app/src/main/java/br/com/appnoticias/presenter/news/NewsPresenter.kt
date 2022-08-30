@@ -1,26 +1,29 @@
 package br.com.appnoticias.presenter.news
 
 import br.com.appnoticias.model.NewsResponse
+import br.com.appnoticias.model.data.NewsDataSource
 import br.com.appnoticias.presenter.ViewHome
 import javax.sql.DataSource
 
 class NewsPresenter(
     val view: ViewHome.View,
-    private val dataSource: DataSource
+    private val dataSource: NewsDataSource
 ) : NewsHome.Presenter {
+
     override fun requestAll() {
-        TODO("Not yet implemented")
+        this.view.showProgressBar()
+        this.dataSource.getBreakingNews(this)
     }
 
     override fun onSuccess(newsResponse: NewsResponse) {
-        TODO("Not yet implemented")
+        this.view.showArticles(newsResponse.articles)
     }
 
     override fun onError(message: String) {
-        TODO("Not yet implemented")
+        this.view.showFailure(message)
     }
 
     override fun onComplete() {
-        TODO("Not yet implemented")
+        this.view.hideProgressBar()
     }
 }
