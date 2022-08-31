@@ -4,11 +4,12 @@ import android.webkit.WebViewClient
 import br.com.appnoticias.R
 import br.com.appnoticias.model.Article
 import br.com.appnoticias.model.data.NewsDataSource
-import br.com.appnoticias.presenter.FavoritePresenter
+import br.com.appnoticias.presenter.ViewHome
+import br.com.appnoticias.presenter.favorite.FavoritePresenter
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_article.*
 
-class ArticleActivity : AbstractActivity() {
+class ArticleActivity : AbstractActivity(), ViewHome.Favorite {
 
     private lateinit var article: Article
     private lateinit var presenter: FavoritePresenter
@@ -18,7 +19,7 @@ class ArticleActivity : AbstractActivity() {
     override fun onInject() {
         getArticle()
         val dataSource = NewsDataSource(this)
-        presenter = FavoritePresenter(dataSource)
+        presenter = FavoritePresenter(this, dataSource)
 
         webView.apply {
             webViewClient = WebViewClient()
@@ -39,4 +40,6 @@ class ArticleActivity : AbstractActivity() {
             article = articleSend.get("article") as Article
         }
     }
+
+    override fun showArticles(articles: List<Article>) { }
 }
